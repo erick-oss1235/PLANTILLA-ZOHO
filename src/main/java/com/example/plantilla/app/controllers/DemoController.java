@@ -45,6 +45,7 @@ public class DemoController {
 	@GetMapping("/getData/{module}/{id}")
 	public ResponseEntity<?> getRecordById(@PathVariable String module,@PathVariable Long id){
 		System.out.println("Hola mundo");
+		
 		configuration.configurationZoho();
 		Map<String,Object> response = new HashMap<String,Object>();
 		try {
@@ -63,6 +64,7 @@ public class DemoController {
 		configuration.configurationZoho();
 		Map<String,Object> response = new HashMap<String,Object>();
 		try {
+			System.out.println("TEST!!");
 			response = service.addRecordInModule(module, data);
 		} catch (ZCRMException e) {
 			response.put("ok", "false");
